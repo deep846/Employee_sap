@@ -1,0 +1,55 @@
+<mvc:View xmlns:form="sap.ui.layout.form" xmlns:table="sap.ui.table" controllerName="employeedc.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+    <Page id="page" title="{i18n>title}">
+    <content>
+    <table:Table id="t" rows="{dc>/d/results}" 
+        selectionMode="Single"
+        rowSelectionChange="onRowSelect"
+    >
+        <table:columns>
+            <table:Column id="c1">
+                <table:label>
+                    <Label id="l1" text="ID"></Label>
+                </table:label>
+                <table:template>
+                    <Text id="t1" text="{dc>Identification}"></Text>
+                </table:template>
+            </table:Column>
+            <table:Column id="c2">
+                <table:label>
+                    <Label id="l2" text="Name"></Label>
+                </table:label>
+                <table:template>
+                    <Text id="t2" text="{dc>Name}"></Text>
+                </table:template>
+            </table:Column>
+            <table:Column id="c3">
+                <table:label>
+                    <Label id="l3" text="Domain Name"></Label>
+                </table:label>
+                <table:template>
+                    <Text id="t3" text="{dc>Domain_Names}"></Text>
+                </table:template>
+            </table:Column>
+        </table:columns>
+    </table:Table>
+        <Button id="btn" text="Press me" press=".onLoad"></Button>
+
+        <form:SimpleForm id="form">
+            <form:content>
+                <Label id="l4" text="Employee Id"></Label>
+                <Text id="txt4" text="{dc>Identification}"></Text>
+            </form:content>
+            <form:content>
+                <Label id="l41" text="Name"></Label>
+                <Text id="txt41" text="{dc>Name}"></Text>
+            </form:content>
+            <form:content>
+                <Label id="l412" text="Domain Name"></Label>
+                <Text id="txt412" text="{dc>Domain_Names}"></Text>
+            </form:content>
+        </form:SimpleForm>
+    </content>
+    </Page>
+</mvc:View>
